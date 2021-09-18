@@ -4,6 +4,10 @@ import Typist from "react-typist";
 import { parseCookies, setCookie } from "nookies";
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 
+import {stacks} from "../services/stacks"
+import { pokemons } from "../services/pokemons";
+import { rickAndMort } from  "../services/rickandmort"
+
 import styles from "./home.module.scss";
 import { Card } from "../components/Card";
 
@@ -20,9 +24,11 @@ interface HomeProps {
   stacks: DataAPI[];
 }
 
-export default function Home({ pokemon, rickAndMort, stacks } : HomeProps) {
+//{ pokemon, rickAndMort, stacks } : HomeProps
+
+export default function Home() {
   const [count, setCount] = useState(0);
-  const array = [stacks, pokemon, rickAndMort];
+  const array = [stacks, pokemons, rickAndMort];
   const [buttonActivate, setButtonActivate] = useState(0);
 
   useEffect(() => {
@@ -114,23 +120,23 @@ export default function Home({ pokemon, rickAndMort, stacks } : HomeProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (ctx: any) => {
-  const responsePokemon = await fetch("http://localhost:3000/api/pokemon");
-  const pokemon = await responsePokemon.json();
+// export const getStaticProps: GetStaticProps = async () => {
+//   const responsePokemon = await fetch("pages/api/pokemon");
+//   const pokemon = await responsePokemon.json();
 
-  const responseRickAndMort = await fetch(
-    "http://localhost:3000/api/rickandmort"
-  );
-  const rickAndMort = await responseRickAndMort.json();
+//   const responseRickAndMort = await fetch(
+//     "pages/api/rickandmort"
+//   );
+//   const rickAndMort = await responseRickAndMort.json();
 
-  const responseStacks = await fetch("http://localhost:3000/api/stacks");
-  const stacks = await responseStacks.json();
+//   const responseStacks = await fetch("pages/api/stacks");
+//   const stacks = await responseStacks.json();
 
-  return {
-    props: {
-      pokemon,
-      rickAndMort,
-      stacks,
-    },
-  };
-};
+//   return {
+//     props: {
+//       pokemon,
+//       rickAndMort,
+//       stacks,
+//     },
+//   };
+// };
