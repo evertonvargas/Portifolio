@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next"
+import { GetStaticProps } from "next";
 import { useState, useEffect } from "react";
 import Typist from "react-typist";
 import { parseCookies, setCookie } from "nookies";
@@ -7,23 +7,40 @@ import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import styles from "./home.module.scss";
 import { Card } from "../components/Card";
 
+interface DataAPI {
+  id: number;
+  name: string;
+  image: string;
+  link: string;
+}
 
-export default function Home({pokemon, rickAndMort, stacks, cookie}) {
+interface HomeProps {
+  pokemon: DataAPI[];
+  rickAndMort: DataAPI[];
+  stacks: DataAPI[];
+}
+
+export default function Home({ pokemon, rickAndMort, stacks } : HomeProps) {
   const [count, setCount] = useState(0);
   const array = [stacks, pokemon, rickAndMort];
-  
-  const [buttonActivate, setButtonActivate] = useState(cookie);
+  const [buttonActivate, setButtonActivate] = useState(0);
+
+  useEffect(() => {
+    const { USER_MENU } = parseCookies();
+    const cookie = USER_MENU ? Number(USER_MENU) : 0;
+    setButtonActivate(cookie);
+  }, []);
 
   useEffect(() => {
     setCount(1);
   }, [count]);
 
-  function handleButtonActivate(number:number){
-    setCookie(null, 'USER_MENU', number.toString(), {
+  function handleButtonActivate(number: number) {
+    setCookie(null, "USER_MENU", number.toString(), {
       maxAge: 86400 * 7,
       path: "/",
-    })
-    setButtonActivate(number)
+    });
+    setButtonActivate(number);
   }
 
   return (
@@ -42,7 +59,9 @@ export default function Home({pokemon, rickAndMort, stacks, cookie}) {
             <Typist.Backspace count={9} delay={1500} />
           </Typist>
         ) : (
-          <div><span>|</span></div>
+          <div>
+            <span>|</span>
+          </div>
         )}
       </section>
       <div>
@@ -61,42 +80,57 @@ export default function Home({pokemon, rickAndMort, stacks, cookie}) {
       </div>
       <div>
         <nav>
-          <button className={buttonActivate === 0 ? styles.active : undefined} onClick={()=>handleButtonActivate(0)}>Stacks</button>
-          <button className={buttonActivate === 1 ? styles.active : undefined} onClick={()=>handleButtonActivate(1)}>Pokémon</button>
-          <button className={buttonActivate === 2 ? styles.active : undefined} onClick={()=>handleButtonActivate(2)}>Rick and Mort</button>
+          <button
+            className={buttonActivate === 0 ? styles.active : undefined}
+            onClick={() => handleButtonActivate(0)}
+          >
+            Stacks
+          </button>
+          <button
+            className={buttonActivate === 1 ? styles.active : undefined}
+            onClick={() => handleButtonActivate(1)}
+          >
+            Pokémon
+          </button>
+          <button
+            className={buttonActivate === 2 ? styles.active : undefined}
+            onClick={() => handleButtonActivate(2)}
+          >
+            Rick and Mort
+          </button>
         </nav>
       </div>
       <section>
-        {array[buttonActivate].map(character=> 
-          <Card key={character.id}
-          name={character.name}
-          urlImg={character.image}
+        {array[buttonActivate].map((character) => (
+          <Card
+            key={character.id}
+            name={character.name}
+            urlImg={character.image}
+            link={character.link}
           />
-        )}
+        ))}
       </section>
     </main>
   );
 }
 
-export const getStaticProps:GetStaticProps = async (ctx:any) => {
-  const responsePokemon = await fetch('http://localhost:3000/api/pokemon')
-  const pokemon = await responsePokemon.json()
+export const getStaticProps: GetStaticProps = async (ctx: any) => {
+  const responsePokemon = await fetch("http://localhost:3000/api/pokemon");
+  const pokemon = await responsePokemon.json();
 
-  const responseRickAndMort = await fetch('http://localhost:3000/api/rickandmort')
-  const rickAndMort = await responseRickAndMort.json()
+  const responseRickAndMort = await fetch(
+    "http://localhost:3000/api/rickandmort"
+  );
+  const rickAndMort = await responseRickAndMort.json();
 
-  const responseStacks = await fetch('http://localhost:3000/api/stacks')
-  const stacks = await responseStacks.json()
+  const responseStacks = await fetch("http://localhost:3000/api/stacks");
+  const stacks = await responseStacks.json();
 
-  const { USER_MENU } = parseCookies();
-  const cookie =  USER_MENU ? Number(USER_MENU) : 0;
-  
   return {
-    props:{
+    props: {
       pokemon,
       rickAndMort,
       stacks,
-      cookie
-    }
-  }
-}
+    },
+  };
+};
