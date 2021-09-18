@@ -22,9 +22,9 @@ export default function handler (request: NextApiRequest, response: NextApiRespo
     },
     {
       id: 4,
-      name: "Pidgeotto",
-      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/17.svg",
-      link: "https://www.pokemon.com/br/pokedex/pidgeotto"
+      name: "Magnemite",
+      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/81.svg",
+      link: "https://www.pokemon.com/br/pokedex/magnemite"
     }
   ]
 

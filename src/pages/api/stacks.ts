@@ -5,7 +5,7 @@ export default function handler(request: NextApiRequest, response: NextApiRespon
     {
       id: 1,
       name: "Javascript",
-      image: "https://w7.pngwing.com/pngs/725/775/png-transparent-javascript-html-logo-blog-css3-javanese-miscellaneous-angle-text.png",
+      image: "images/js.png",
       link: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
     },
     {
@@ -29,26 +29,38 @@ export default function handler(request: NextApiRequest, response: NextApiRespon
     {
       id: 5,
       name: "Sass",
-      image: "https://w7.pngwing.com/pngs/437/300/png-transparent-sass-npm-cascading-style-sheets-node-js-sass-purple-violet-text.png",
+      image: "images/sass.png",
       link: "https://sass-lang.com/"
     },
     {
       id: 6,
       name: "MongoDb",
-      image: "https://w7.pngwing.com/pngs/768/167/png-transparent-mongodb-nosql-document-oriented-database-nosql-icon-leaf-grass-business.png",
+      image: "images/mongodb.png",
       link: "https://www.mongodb.com/pt-br"
     },
     {
       id: 7,
       name: "Python",
-      image: "https://w7.pngwing.com/pngs/140/948/png-transparent-blue-and-yellow-logo-python-logo-programmer-fierce-python-s-cdr-angle-text.png",
+      image: "images/python.png",
       link: "https://www.python.org/"
     },
     {
       id: 8,
       name: "Express",
-      image: "https://w7.pngwing.com/pngs/925/447/png-transparent-express-js-node-js-javascript-mongodb-node-js-text-trademark-logo.png",
+      image: "images/express.png",
       link: "https://expressjs.com/"
+    },
+    {
+      id: 9,
+      name: "Docker",
+      image: "images/docker.png",
+      link: "https://www.docker.com/"
+    },
+    {
+      id: 10,
+      name: "Git",
+      image: "images/git.png",
+      link: "https://git-scm.com/"
     }
   ]
 
