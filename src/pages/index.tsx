@@ -71,7 +71,7 @@ export default function Home() {
         )}
       </section>
       <div>
-        <a href="https://wa.me/48991320628">
+        <a href="https://api.whatsapp.com/send?phone=5548991320628">
           <FaWhatsapp size={25} />
           <span>Whatsapp</span>
         </a>
