@@ -1,4 +1,4 @@
-export const rickandmort = [
+export const rick = [
   {
     id: 1,
     name: "Rick Sanchez",
