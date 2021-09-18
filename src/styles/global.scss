@@ -1,0 +1,51 @@
+:root{
+  --background: #181B23;
+  --black: #000;
+
+  --purple: #797D9A;
+  --gray: #2E3040;
+
+  --white: #fff;
+  --pink: #D53F86;
+  --green: #33CC95;
+  --red: #C70000;
+  --start-color: #09a5ff;
+  --end-color: #00DFD8;
+  --start-color-from: #faa401;
+  --end-color-to: #f82a92;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+  color: var(--white);
+  font-size: 1.6rem;
+}
+
+body, input, textarea, select, button{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+button{
+  cursor: pointer;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+ol, ul {
+	list-style: none;
+}

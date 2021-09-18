@@ -1,0 +1,112 @@
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+
+  > section:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    div:first-child {
+      height: 220px;
+      width: 100%;
+      background-color: var(--gray);
+      background-image: url("../../public/images/play.jpeg");
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center 80%;
+      background-repeat: no-repeat;
+    }
+
+    img {
+      border-radius: 50%;
+      border: 6px solid var(--background);
+      width: 120px;
+      height: 120px;
+      margin: -60px;
+    }
+
+    h1 {
+      margin: 5rem 0 0.4rem;
+      background-image: linear-gradient(
+        90deg,
+        var(--start-color),
+        var(--end-color)
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    div {
+      span {
+        background-image: linear-gradient(
+          90deg,
+          var(--start-color-from),
+          var(--end-color-to)
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 2rem;
+
+    a {
+      width: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      margin: 2rem 1.2rem;
+      font-size: 1.2rem;
+      color: var(--purple);
+
+      span {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+
+    nav {
+      background: var(--gray);
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 160px);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
+      button {
+        background: var(--gray);
+        border-radius: 5px;
+        color: var(--purple);
+        outline: none;
+        border: none;
+        padding: 0.8rem 2rem;
+
+        &.active {
+          background: var(--green);
+          color: var(--white);
+        }
+      }
+    }
+  }
+
+  section:last-child {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    margin: 6rem 0;
+  }
+}
