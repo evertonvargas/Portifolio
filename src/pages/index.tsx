@@ -6,7 +6,7 @@ import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 
 import {stacks} from "../services/stacks"
 import { pokemons } from "../services/pokemons";
-import { rickAndMort } from  "../services/rickandmort"
+import { rickandmort } from  "../services/rickandmort"
 
 import styles from "./home.module.scss";
 import { Card } from "../components/Card";
@@ -28,7 +28,7 @@ interface HomeProps {
 
 export default function Home() {
   const [count, setCount] = useState(0);
-  const array = [stacks, pokemons, rickAndMort];
+  const array = [stacks, pokemons, rickandmort];
   const [buttonActivate, setButtonActivate] = useState(0);
 
   useEffect(() => {
