@@ -9,9 +9,10 @@
   padding: 15px;
   border-radius: 10px;
   text-decoration: none;
+  transition-duration: 0.2s;
 
   &:hover {
-    transform: translateY(-15px);
+    transform: translateY(-12px);
     box-shadow: white 0 0 25px;
   }
 
