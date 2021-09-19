@@ -4,9 +4,9 @@ import Typist from "react-typist";
 import { parseCookies, setCookie } from "nookies";
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 
-import {stacks} from "../services/stacks"
-import { pokemons } from "../services/pokemons";
-import { rick } from  "../services/rick"
+import { stacks } from "../services/stacks";
+import { projects } from "../services/projects";
+import { animes } from "../services/animes";
 
 import styles from "./home.module.scss";
 import { Card } from "../components/Card";
@@ -28,7 +28,7 @@ interface HomeProps {
 
 export default function Home() {
   const [count, setCount] = useState(0);
-  const array = [stacks, pokemons, rick];
+  const array = [stacks, projects, animes];
   const [buttonActivate, setButtonActivate] = useState(0);
 
   useEffect(() => {
@@ -90,19 +90,19 @@ export default function Home() {
             className={buttonActivate === 0 ? styles.active : undefined}
             onClick={() => handleButtonActivate(0)}
           >
-            Stacks
+            🚀 Stacks
           </button>
           <button
             className={buttonActivate === 1 ? styles.active : undefined}
             onClick={() => handleButtonActivate(1)}
           >
-            Pokémon
+            🔮 Projetos
           </button>
           <button
             className={buttonActivate === 2 ? styles.active : undefined}
             onClick={() => handleButtonActivate(2)}
           >
-            Rick and Mort
+            📺 Animes
           </button>
         </nav>
       </div>
