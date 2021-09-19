@@ -59,9 +59,9 @@ export default function Home() {
           <Typist avgTypingDelay={100} onTypingDone={() => setCount(0)}>
             <span> Full Stack</span>
             <Typist.Backspace count={11} delay={1500} />
-            <span> Front End</span>
+            <span> Front-End</span>
             <Typist.Backspace count={10} delay={1500} />
-            <span> Back End</span>
+            <span> Back-End</span>
             <Typist.Backspace count={9} delay={1500} />
           </Typist>
         ) : (
