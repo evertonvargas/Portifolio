@@ -7,7 +7,7 @@ export const projects = [
   },
   {
     id: 2,
-    name: "Salário Vendedores",
+    name: "Salário",
     image: "images/sales-salary.png",
     link: "https://sales-salary.vercel.app/"
   },
@@ -55,7 +55,7 @@ export const projects = [
   },
   {
     id: 11,
-    name: "dt money",
+    name: "Dt money",
     image: "images/dtmoney.png",
     link: "https://github.com/evertonvargas/dtmoney"
   },

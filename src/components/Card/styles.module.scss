@@ -17,7 +17,7 @@
 
   span {
     background: var(--gray);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 0.5rem 1rem;
     font-size: 1.3rem;
 
@@ -29,18 +29,13 @@
   }
 }
 
-@media (max-width: 755px) {
-  .container {
-    padding: 10px;
-  }
-}
-
 @media (max-width: 390px) {
   .container {
     padding: 5px;
 
     span {
-      font-size: 1.2rem;
+      padding: .7rem 1rem;
+      font-size: 1.3rem;
     }
   }
 }
