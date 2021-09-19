@@ -14,7 +14,7 @@ export const animes = [
   {
     id: 3,
     name: "Hunter x Hunter",
-    image: "images/hunterxhunter.png",
+    image: "images/hunter.png",
     link: "https://animesbr.biz/anime/hunter-x-hunter-2011/"
   },
   {

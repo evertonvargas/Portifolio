@@ -12,55 +12,55 @@ export const projects = [
     link: "https://sales-salary.vercel.app/"
   },
   {
-    id: 5,
+    id: 3,
     name: "Bateria",
     image: "images/drum.png",
     link: "https://evertonvargas.github.io/Drum/index.html"
   },
   {
-    id: 6,
+    id: 4,
     name: "Wildbeast",
     image: "images/wildbeast.png",
     link: "https://evertonvargas.github.io/CSS-Grid-Layout/"
   },
   {
-    id: 8,
+    id: 5,
     name: "Shoes Store",
     image: "images/shoes-store.png",
     link: "https://shoes-store-ruby-tau.vercel.app/"
   },
   {
-    id: 9,
+    id: 6,
     name: "Notas",
     image: "images/keeper.png",
     link: "https://keeper-six.vercel.app/"
   },
   {
-    id: 3,
+    id: 7,
     name: "Link Aulas",
     image: "images/schedule.png",
     link: "https://schedule-92nlxpvl5-evertonvargas.vercel.app/"
   },
   {
-    id: 5,
+    id: 8,
     name: "Jogo de Dados",
     image: "images/dice-game.png",
     link: "https://evertonvargas.github.io/Dice-game/index.html"
   },
   {
-    id: 7,
+    id: 9,
     name: "Letmeask",
     image: "images/letmeask.png",
     link: "https://letmeask-server.web.app/"
   },
   {
-    id: 11,
+    id: 10,
     name: "Dt money",
     image: "images/dtmoney.png",
     link: "https://github.com/evertonvargas/dtmoney"
   },
   {
-    id: 13,
+    id: 11,
     name: "Go Restaurant",
     image: "images/go-restaurant.png",
     link: "https://github.com/evertonvargas/GoRestaurant"
@@ -72,7 +72,7 @@ export const projects = [
     link: "https://github.com/evertonvargas/watchme"
   },
   {
-    id: 10,
+    id: 13,
     name: "Cloker",
     image: "images/cloker.png",
     link: "https://github.com/evertonvargas/Clocker"
