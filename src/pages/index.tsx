@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Typist from "react-typist";
 import { parseCookies, setCookie } from "nookies";
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import Head from "next/head";
 
 import { stacks } from "../services/stacks";
 import { projects } from "../services/projects";
@@ -50,73 +51,79 @@ export default function Home() {
   }
 
   return (
-    <main className={styles.container}>
-      <section>
-        <div></div>
-        <img src="images/everton.jpg" alt="Éverton Vargas" />
-        <h1>Éverton Vargas</h1>
-        {count ? (
-          <Typist avgTypingDelay={100} onTypingDone={() => setCount(0)}>
-            <span> Full Stack</span>
-            <Typist.Backspace count={11} delay={1500} />
-            <span> Front-End</span>
-            <Typist.Backspace count={10} delay={1500} />
-            <span> Back-End</span>
-            <Typist.Backspace count={9} delay={1500} />
-          </Typist>
-        ) : (
-          <div>
-            <span>|</span>
-          </div>
-        )}
-      </section>
-      <div>
-        <a href="https://api.whatsapp.com/send?phone=5548991320628">
-          <FaWhatsapp size={25} />
-          <span>Whatsapp</span>
-        </a>
-        <a href="https://www.linkedin.com/in/everton-vargas/">
-          <FaLinkedin size={25} />
-          <span>Linkedin</span>
-        </a>
-        <a href="https://github.com/evertonvargas">
-          <FaGithub size={25} />
-          <span>Github</span>
-        </a>
-      </div>
-      <div>
-        <nav>
-          <button
-            className={buttonActivate === 0 ? styles.active : undefined}
-            onClick={() => handleButtonActivate(0)}
-          >
-            🚀 Stacks
-          </button>
-          <button
-            className={buttonActivate === 1 ? styles.active : undefined}
-            onClick={() => handleButtonActivate(1)}
-          >
-            🔮 Projetos
-          </button>
-          <button
-            className={buttonActivate === 2 ? styles.active : undefined}
-            onClick={() => handleButtonActivate(2)}
-          >
-            📺 Animes
-          </button>
-        </nav>
-      </div>
-      <section>
-        {array[buttonActivate].map((character) => (
-          <Card
-            key={character.id}
-            name={character.name}
-            urlImg={character.image}
-            link={character.link}
-          />
-        ))}
-      </section>
-    </main>
+    <>
+      <Head>
+        <meta name="description" content="Portfólio Éverton Vargas" />
+        <title>PortFólio Éverton Vargas</title>
+      </Head>
+      <main className={styles.container}>
+        <section>
+          <div></div>
+          <img src="images/everton.jpg" alt="Éverton Vargas" />
+          <h1>Éverton Vargas</h1>
+          {count ? (
+            <Typist avgTypingDelay={100} onTypingDone={() => setCount(0)}>
+              <span> Full Stack</span>
+              <Typist.Backspace count={11} delay={1500} />
+              <span> Front-End</span>
+              <Typist.Backspace count={10} delay={1500} />
+              <span> Back-End</span>
+              <Typist.Backspace count={9} delay={1500} />
+            </Typist>
+          ) : (
+            <div>
+              <span>|</span>
+            </div>
+          )}
+        </section>
+        <div>
+          <a href="https://api.whatsapp.com/send?phone=5548991320628">
+            <FaWhatsapp size={25} />
+            <span>Whatsapp</span>
+          </a>
+          <a href="https://www.linkedin.com/in/everton-vargas/">
+            <FaLinkedin size={25} />
+            <span>Linkedin</span>
+          </a>
+          <a href="https://github.com/evertonvargas">
+            <FaGithub size={25} />
+            <span>Github</span>
+          </a>
+        </div>
+        <div>
+          <nav>
+            <button
+              className={buttonActivate === 0 ? styles.active : undefined}
+              onClick={() => handleButtonActivate(0)}
+            >
+              🚀 Stacks
+            </button>
+            <button
+              className={buttonActivate === 1 ? styles.active : undefined}
+              onClick={() => handleButtonActivate(1)}
+            >
+              🔮 Projetos
+            </button>
+            <button
+              className={buttonActivate === 2 ? styles.active : undefined}
+              onClick={() => handleButtonActivate(2)}
+            >
+              📺 Animes
+            </button>
+          </nav>
+        </div>
+        <section>
+          {array[buttonActivate].map((character) => (
+            <Card
+              key={character.id}
+              name={character.name}
+              urlImg={character.image}
+              link={character.link}
+            />
+          ))}
+        </section>
+      </main>
+    </>
   );
 }
 
