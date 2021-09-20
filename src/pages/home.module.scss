@@ -147,3 +147,12 @@
     }
   }
 }
+
+@media (max-width: 350px) {
+  .container {
+    section:last-child {
+      grid-template-columns: repeat(1, 1fr);
+      margin: 3rem 2rem 0;
+    }
+  }
+}

@@ -5,31 +5,28 @@ import { parseCookies, setCookie } from "nookies";
 import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 import Head from "next/head";
 
-import { stacks } from "../services/stacks";
-import { projects } from "../services/projects";
-import { animes } from "../services/animes";
+import {data} from "../services/data";
 
 import styles from "./home.module.scss";
 import { Card } from "../components/Card";
 
-interface DataAPI {
-  id: number;
-  name: string;
-  image: string;
-  link: string;
-}
+// interface DataAPI {
+//   id: number;
+//   name: string;
+//   image: string;
+//   link: string;
+// }
 
-interface HomeProps {
-  pokemon: DataAPI[];
-  rickAndMort: DataAPI[];
-  stacks: DataAPI[];
-}
+// interface HomeProps {
+//   pokemon: DataAPI[];
+//   rickAndMort: DataAPI[];
+//   stacks: DataAPI[];
+// }
 
 //{ pokemon, rickAndMort, stacks } : HomeProps
 
 export default function Home() {
   const [count, setCount] = useState(0);
-  const array = [stacks, projects, animes];
   const [buttonActivate, setButtonActivate] = useState(0);
 
   useEffect(() => {
@@ -96,24 +93,24 @@ export default function Home() {
               className={buttonActivate === 0 ? styles.active : undefined}
               onClick={() => handleButtonActivate(0)}
             >
-              🚀 Stacks
+              {data[0].title}
             </button>
             <button
               className={buttonActivate === 1 ? styles.active : undefined}
               onClick={() => handleButtonActivate(1)}
             >
-              🔮 Projetos
+              {data[1].title}
             </button>
             <button
               className={buttonActivate === 2 ? styles.active : undefined}
               onClick={() => handleButtonActivate(2)}
             >
-              📺 Animes
+              {data[2].title}
             </button>
           </nav>
         </div>
         <section>
-          {array[buttonActivate].map((character) => (
+          {data[buttonActivate].posts.map((character) => (
             <Card
               key={character.id}
               name={character.name}
