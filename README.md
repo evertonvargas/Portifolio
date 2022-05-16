@@ -8,8 +8,6 @@
 
 Fazer um site de portifolio conforme o design que foi passado.
 
-Site: https://portifolio-silk.vercel.app/
-
 ## :crystal_ball: Technologies
 
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
